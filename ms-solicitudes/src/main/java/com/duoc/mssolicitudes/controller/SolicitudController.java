@@ -29,7 +29,7 @@ public class SolicitudController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Solicitud> buscar(@PathVariable Long id) {
-        Solicitud solicitud = repository.findById(id),orElse(null);
+        Solicitud solicitud = repository.findById(id).orElse(null);
         if (solicitud == null){
             return ResponseEntity.notFound().build();
         }
